@@ -1,13 +1,20 @@
+import java.util.Scanner;
 class Palindrome {
-    public static boolean isPalindrome(int x) {
-        if(x<0){
-            return false;
-        }
-            String str = Integer.toString(x);
-            return str.equals(new StringBuilder(str).reverse().toString());
-    }
-
     public static void main(String[] args){
-        System.out.println(isPalindrome(121));
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the word: ");
+        String str = sc.nextLine();
+        String rstr = "";
+
+        for(int i=str.length()-1;i>=0;i--){
+            rstr += str.charAt(i);
+        }
+
+        if(str.equals(rstr)){
+            System.out.println("Is Palindrome");
+        }else {
+            System.out.println("Not a Palindrome");
+        }
+
     }
 }
